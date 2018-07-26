@@ -110,7 +110,7 @@ int main(void)
   GPIO_OUTPUT_SET();
   /* USER CODE BEGIN 2 */
   
-  printf("SERIAL SET\r\n");
+  printf("SERIAL123 SET\r\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -191,7 +191,7 @@ static void MX_USART1_UART_Init(void)
 {
 
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 921600;
+  huart1.Init.BaudRate = 153511;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -219,18 +219,18 @@ static void MX_GPIO_Init(void)
 void GPIO_OUTPUT_SET(void)
 {
 	__HAL_RCC_GPIOC_CLK_ENABLE();
-	GPIO_INIT.Pin = GPIO_PIN_14;
+	GPIO_INIT.Pin = GPIO_PIN_15;
 	GPIO_INIT.Mode = GPIO_MODE_OUTPUT_PP;
 	GPIO_INIT.Pull = GPIO_NOPULL;
 	GPIO_INIT.Speed = GPIO_SPEED_FAST;
-	HAL_GPIO_Init(GPIOC, &GPIO_INIT);
+	HAL_GPIO_Init(GPIOB, &GPIO_INIT);
 
 	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_14,GPIO_PIN_SET);
 }
 void GPIO_INPUT_SET(void)
 {
 	__HAL_RCC_GPIOC_CLK_ENABLE();
-	GPIO_INIT.Pin = GPIO_PIN_13;
+	GPIO_INIT.Pin = GPIO_PIN_1;
 	GPIO_INIT.Mode = GPIO_MODE_INPUT;
 	GPIO_INIT.Pull = GPIO_PULLDOWN;
 	GPIO_INIT.Speed = GPIO_SPEED_FAST;
